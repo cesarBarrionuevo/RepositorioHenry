@@ -1,2 +1,2 @@
 # RepositorioHenry
-ejercicio 1 - Homework Github
+FT-M1 - Ejercicios Resueltos
