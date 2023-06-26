@@ -23,15 +23,22 @@ var c = function (a, b, c) {
    f(a, b, c);
    console.log(b);
 };
-c(8, 9, 10);
-console.log(b);
-console.log(x);
+c(8, 9, 10);  
+/* 
+Muestra:
+10 por x
+8 por a
+8 por b en la funcion f
+9 por la imprimir valor b
+*/
+console.log(b);  // 9
+console.log(x);  // 1
 ```
 
 ```javascript
-console.log(bar);
-console.log(baz);
-foo();
+console.log(bar); //undefined
+console.log(baz); //no existe variable "is not defined"
+foo(); // hola
 function foo() {
    console.log('Hola!');
 }
@@ -44,19 +51,19 @@ var instructor = 'Tony';
 if (true) {
    var instructor = 'Franco';
 }
-console.log(instructor);
+console.log(instructor);  //Franco
 ```
 
 ```javascript
 var instructor = 'Tony';
-console.log(instructor);
+console.log(instructor); // tony
 (function () {
    if (true) {
       var instructor = 'Franco';
       console.log(instructor);
    }
 })();
-console.log(instructor);
+console.log(instructor); //Tony
 ```
 
 ```javascript
@@ -65,11 +72,11 @@ let pm = 'Franco';
 if (true) {
    var instructor = 'The Flash';
    let pm = 'Reverse Flash';
-   console.log(instructor);
-   console.log(pm);
+   console.log(instructor); //the Flash 
+   console.log(pm); //Reserve Flash
 }
-console.log(instructor);
-console.log(pm);
+console.log(instructor); //The Flash
+console.log(pm); //Reserve The Flash
 ```
 
 ### Coerción de Datos
@@ -77,22 +84,22 @@ console.log(pm);
 ¿Cuál crees que será el resultado de la ejecución de estas operaciones?:
 
 ```javascript
-6 / "3"
-"2" * "3"
-4 + 5 + "px"
-"$" + 4 + 5
-"4" - 2
-"4px" - 2
-7 / 0
-{}[0]
-parseInt("09")
-5 && 2
-2 && 5
-5 || 0
-0 || 5
-[3]+[3]-[10]
-3>2>1
-[] == ![]
+6 / "3"   // 2
+"2" * "3" // 6
+4 + 5 + "px"  //9px
+"$" + 4 + 5 //$45
+"4" - 2  // 2
+"4px" - 2 //nan
+7 / 0 //0
+{}[0]  //[0]
+parseInt("09") // 9
+5 && 2   // 2
+2 && 5   // 5
+5 || 0   //5
+0 || 5  // 0
+[3]+[3]-[10]  // 
+3>2>1 // False
+[] == ![] // False
 ```
 
 > Si te quedó alguna duda repasá con [este artículo](http://javascript.info/tutorial/object-conversion).
@@ -112,7 +119,11 @@ function test() {
    }
 }
 
-test();
+test(); // undefined , 2
+/* 
+   undefined porque la variable "a" esta creada con "var" y ya se sabe de su existencia, no todavia el valor
+   2 porque se llama a la funcion foo() dentro del conolo.log y esta retorna el valor 2
+*/
 ```
 
 Y el de este código? :
@@ -129,6 +140,8 @@ function getFood(food) {
 }
 
 getFood(false);
+
+// undefined no se le dio un valor a snack cuando sea falso
 ```
 
 ### This
@@ -147,11 +160,11 @@ var obj = {
    },
 };
 
-console.log(obj.prop.getFullname());
+console.log(obj.prop.getFullname());  //Natalia Nerea
 
 var test = obj.prop.getFullname;
 
-console.log(test());
+console.log(test()); //Natalia Nerea
 ```
 
 ### Event loop
@@ -170,7 +183,7 @@ function printing() {
    console.log(4);
 }
 
-printing();
+printing(); // 1,4,3,2
 ```
 
 </br >
